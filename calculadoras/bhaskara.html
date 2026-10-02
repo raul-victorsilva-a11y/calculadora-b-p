@@ -1,0 +1,36 @@
+<h1>Bhaskara</h1>
+
+<input type="text" id="aValue" />x² +
+<input type="text" id="bValue" />x +
+<input type="text" id="cValue" /> = 0
+<br>
+<input type="button" onclick="calcular()" value="Calcular" />
+<script>
+    function calcular() {
+        let a = document.getElementById("aValue")
+        let b = document.getElementById("bValue")
+        let c = document.getElementById("cValue")
+
+        if (isNaN((a.value)) || isNaN((b.value)) || isNaN((c.value))) {
+            alert("A,B e C invalidos")
+            return
+        }
+
+        let delta = b ** 2;
+        delta = delta - 4 * a * c;
+        if (delta < 0) {
+            alert("valor de delta negtivo")
+        return
+        } else if (delta == 0) {
+            alert("valor de delta igual a zero")
+            return
+        }
+        let x1;
+        let x2;
+        b = b * -1;
+        x1 = ((b - delta ** 0.5) / (2 * a));
+        x2 = ((b + delta ** 0.5) / (2 * a));
+
+        display.textContent`x1 = ${x1} e x2 = ${x2}`
+    }
+</script>
